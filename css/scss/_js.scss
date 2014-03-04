@@ -1,0 +1,14 @@
+@import "compass/css3";
+
+.toggle {
+    @include transition(2s);
+    overflow: hidden;
+}
+
+.toggle-hidden {
+    max-height: 0;
+}
+
+.toggle-show {
+    max-height: 1000px;
+}

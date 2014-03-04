@@ -11,7 +11,7 @@ html {
 body {
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
     color: #333;
-    background: url(../img/page-fade.png) repeat-x #f6f6f6;
+    // background: #f6f6f6;
     font-size: 14px;
     line-height: 1.428571429;
 }
@@ -20,12 +20,20 @@ a {
     text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+}
+
 ul {
     padding-left: $bg;
 }
 
 li {
     list-style-type: circle;
+}
+
+hr {
+    border: 1px solid #ddd;
 }
 
 .image-right {
@@ -59,6 +67,14 @@ li {
     width: 50%;
 }
 
+.inline-list {
+    li {
+        display: inline-block;
+
+        padding: 0 $bg / 2;
+    }
+}
+
 @include respond-phone {
     [class*=col] {
         width: 100%;
@@ -74,49 +90,28 @@ li {
     max-width: $phone-width;
 }
 
-#logo a {
-    @include respond-phone {
-        text-align: center;
-        display: block;
-        margin-bottom: $bg;
-    }
-}
 
 #searchform {
-    @include respond-desktop {
-        width: 500px;
-        margin-left: $bg;
-    }
-
-    form {
-        @include respond-desktop {
-            position: absolute;
-            top: 50px;
-        }
-
-        width: 100%;
-        background: white;
-        padding: $bg;
-        border-radius: 10px;
-        border: 1px solid #ccc;
-    }
-
-    .searchbar {
-        height: 50px;
-        background: white;
-    }
+    margin-top: 0;
 
     input, button, select, option {
         font-size: $bg;
         padding: $bg / 2;
     }
 
-    input[type=text] {
-        border: none;
-    }
-
     select {
         height: $bg * 2;
         border: 1px solid #ccc;
+    }
+
+    select, button {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+
+        @include respond-phone {
+            width: 100%;
+            margin: $bg / 4 0;
+        }
     }
 }

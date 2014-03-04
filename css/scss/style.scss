@@ -1,3 +1,7 @@
 @import "values";
 @import "mixins";
 @import "base";
+
+html.js-enabled {
+    @import "js";
+}
