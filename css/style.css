@@ -1,0 +1,148 @@
+/* line 1, scss/_base.scss */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* line 7, scss/_base.scss */
+html {
+  font-size: 62.5%;
+}
+
+/* line 11, scss/_base.scss */
+body {
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  color: #333;
+  background: url(../img/page-fade.png) repeat-x #f6f6f6;
+  font-size: 14px;
+  line-height: 1.428571429;
+}
+
+/* line 19, scss/_base.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 23, scss/_base.scss */
+ul {
+  padding-left: 16px;
+}
+
+/* line 27, scss/_base.scss */
+li {
+  list-style-type: circle;
+}
+
+/* line 31, scss/_base.scss */
+.image-right {
+  float: right;
+  margin: 0 0 16px 16px;
+}
+
+/* line 36, scss/_base.scss */
+.row {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+/* line 3, scss/_mixins.scss */
+.row:before, .row:after {
+  content: " ";
+  display: table;
+}
+/* line 8, scss/_mixins.scss */
+.row:after {
+  clear: both;
+}
+
+/* line 44, scss/_base.scss */
+.col, [class*=col] {
+  position: relative;
+  min-height: 1px;
+  float: left;
+}
+
+/* line 50, scss/_base.scss */
+.col-full {
+  width: 100%;
+}
+
+/* line 54, scss/_base.scss */
+.col-third {
+  width: 33.33333%;
+}
+
+/* line 58, scss/_base.scss */
+.col-half {
+  width: 50%;
+}
+
+@media (max-width: 720px) {
+  /* line 63, scss/_base.scss */
+  [class*=col] {
+    width: 100%;
+  }
+}
+/* line 68, scss/_base.scss */
+.center {
+  text-align: center;
+}
+
+/* line 72, scss/_base.scss */
+.container {
+  margin: 0 auto;
+  max-width: 720px;
+}
+
+@media (max-width: 720px) {
+  /* line 77, scss/_base.scss */
+  #logo a {
+    text-align: center;
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+
+@media (min-width: 720px) {
+  /* line 85, scss/_base.scss */
+  #searchform {
+    width: 500px;
+    margin-left: 16px;
+  }
+}
+/* line 91, scss/_base.scss */
+#searchform form {
+  width: 100%;
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+@media (min-width: 720px) {
+  /* line 91, scss/_base.scss */
+  #searchform form {
+    position: absolute;
+    top: 50px;
+  }
+}
+/* line 104, scss/_base.scss */
+#searchform .searchbar {
+  height: 50px;
+  background: white;
+}
+/* line 109, scss/_base.scss */
+#searchform input, #searchform button, #searchform select, #searchform option {
+  font-size: 16px;
+  padding: 8px;
+}
+/* line 114, scss/_base.scss */
+#searchform input[type=text] {
+  border: none;
+}
+/* line 118, scss/_base.scss */
+#searchform select {
+  height: 32px;
+  border: 1px solid #ccc;
+}

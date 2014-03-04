@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wikipedia.nl</title>
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div id="logo" class="col">
+                <a href="http://nl.wikipedia.org">
+                    <!-- <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Wikipedia-logo.png/150px-Wikipedia-logo.png" alt="Wikipedia logo" /> -->
+                    <img src="img/logo.png" alt="Wikipedia logo" height="160">
+                </a>
+            </div>
+
+            <div id="searchform" class="col">
+                <form action="get" role="form">
+                    <input type="text" id="search" name="search" placeholder="Zoek in Wikipedia" />
+
+                    <select name="language" id="language">
+                        <option value="nl">Nederlands</option>
+                        <option value="fy">Frysk</option>
+                        <option value="nds-nl">Nedersaksisch</option>
+                        <option value="li">Limburgs</option>
+                        <option value="en">English</option>
+                    </select>
+
+                    <button type="button">
+                        Zoek
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="row">
+            <ul class="col-third">
+                <li><a href="http://nl.wikipedia.org">Wikipedia in het Nederlands &raquo;</a></li>
+                <li><a href="http://fy.wikipedia.org">Wikipedy yn it Frysk &raquo;</a></li>
+            </ul>
+
+            <ul class="col-third">
+                <li><a href="http://nds-nl.wikipedia.org">Wikipedie in 't Nedersaksisch &raquo;</a></li>
+                <li><a href="http://li.wikipedia.org">Wikipedia op 't Limburgs &raquo;</a></li>
+            </ul>
+
+            <ul class="col-third">
+                <li><a href="http://en.wikipedia.org">Wikipedia in English &raquo;</a></li>
+                <li><a href="http://es.wikipedia.org">Wikipedia en Espanol &raquo;</a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div id="morelanguages" class="center col-full">
+                &laquo;
+                <a href="#">
+                    meer talen -
+                    more languages -
+                    mass hablar -
+                    plus parlers
+                </a>
+                &raquo;
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <a href="http://www.wikimedia.nl">
+                <img src="img/wikimedia.png" alt="Wikimedia logo" class="image-right" width="50" />
+            </a>
+
+            <p style="margin-top:8px;">Wikipedia is een project van de <a href="http://wikimedia.org">Wikimedia Foundation</a>.</p>
+            <p>Steun vrije kennis: <a href="http://www.wikimedia.nl">word lid van de Vereniging Wikimedia Nederland</a>.</p>
+        </div>
+    </div>
+</body>
+</html>

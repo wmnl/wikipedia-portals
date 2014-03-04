@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    color: #333;
+    background: url(../img/page-fade.png) repeat-x #f6f6f6;
+    font-size: 14px;
+    line-height: 1.428571429;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    padding-left: $bg;
+}
+
+li {
+    list-style-type: circle;
+}
+
+.image-right {
+    float: right;
+    margin: 0 0 $bg $bg;
+}
+
+.row {
+    @include clearfix;
+    margin-top: $bg;
+    margin-bottom: $bg;
+    padding-left: $bg;
+    padding-right: $bg;
+}
+
+.col, [class*=col] {
+    position: relative;
+    min-height: 1px;
+    float: left;
+}
+
+.col-full {
+    width: 100%;
+}
+
+.col-third {
+    width: 33.33333%;
+}
+
+.col-half {
+    width: 50%;
+}
+
+@include respond-phone {
+    [class*=col] {
+        width: 100%;
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: $phone-width;
+}
+
+#logo a {
+    @include respond-phone {
+        text-align: center;
+        display: block;
+        margin-bottom: $bg;
+    }
+}
+
+#searchform {
+    @include respond-desktop {
+        width: 500px;
+        margin-left: $bg;
+    }
+
+    form {
+        @include respond-desktop {
+            position: absolute;
+            top: 50px;
+        }
+
+        width: 100%;
+        background: white;
+        padding: $bg;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+    }
+
+    .searchbar {
+        height: 50px;
+        background: white;
+    }
+
+    input, button, select, option {
+        font-size: $bg;
+        padding: $bg / 2;
+    }
+
+    input[type=text] {
+        border: none;
+    }
+
+    select {
+        height: $bg * 2;
+        border: 1px solid #ccc;
+    }
+}
