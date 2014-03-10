@@ -1,5 +1,6 @@
 function App() {
     $("html")[0].className = "js-enabled";
+    $("#search")[0].focus();
     this.initToggle();
 }
 
