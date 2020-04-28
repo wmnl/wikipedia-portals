@@ -1,3 +1,25 @@
+# Wikipedia.nl & Wikipedia.be portals
+Developed and designed by [Hay Kranen](https://www.haykranen.nl/).
+
+## Developing
+You need [Node.js](https://nodejs.org/en/). In the root of this project run
+
+`npm install`
+
+To install dependencies. After that you can run
+
+`npm run dev`
+
+To build the HTML and CSS whenever you change a source file. To just build the files without 'watching':
+
+`npm run build`
+
+Definitions for the language editions can be found in `etc/data.json`.
+
+## Archival versions
+The old versions of the portal can be found in the `archive` directory.
+
+## Rationale (in Dutch)
 Waarom een nieuwe Wikipedia.nl/be?
 
 # Problemen met de huidige website
