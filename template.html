@@ -61,60 +61,23 @@
                 </select>
 
                 <button class="search__button button button--action" type="submit">
-                    {{#if isBe}}Zoeken / Rechercher{{/if}}
-                    {{#if isNl}}Zoeken in Wikipedia{{/if}}
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/OOjs_UI_indicator_search-ltr-invert.svg/60px-OOjs_UI_indicator_search-ltr-invert.svg.png"
+                         class="button__icon"
+                         alt="Search icon" />
+                    <span>
+                        {{#if isBe}}Zoeken / Rechercher{{/if}}
+                        {{#if isNl}}Zoeken in Wikipedia{{/if}}
+                    </span>
                 </button>
             </menu>
         </form>
 
         <div class="languages">
             <ul class="languages__list">
-                {{#if isNl}}
-                <li><a href="http://nl.wikipedia.org">Nederlands</a></li>
-                <li><a href="http://nds-nl.wikipedia.org">Nedersaksisch</a></li>
-                <li><a href="https://yi.wikipedia.org">Yiddish</a></li>
-                {{/if}}
-
-                {{#if isBe}}
-                <li><a href="http://nl.wikipedia.org">Nederlands</a></li>
-                <li><a href="http://lb.wikipedia.org">Lëtzebuergesch</a></li>
-                <li><a href="http://vls.wikipedia.org">West-Vlams</a></li>
-                {{/if}}
+                {{#each languages}}
+                <li><a href="http://{{code}}.wikipedia.org">{{label}}</a></li>
+                {{/each}}
             </ul>
-
-            <ul class="languages__list">
-                {{#if isNl}}
-                <li><a href="http://fy.wikipedia.org">Frysk</a></li>
-                <li><a href="http://li.wikipedia.org">Limburgs</a></li>
-                <li><a href="http://ksh.wikipedia.org">Ripuarisch</a></li>
-                {{/if}}
-
-                {{#if isBe}}
-                <li><a href="http://fr.wikipedia.org">Français</a></li>
-                <li><a href="http://wa.wikipedia.org">Walon</a></li>
-                <li><a href="http://ksh.wikipedia.org">Ripuarisch</a></li>
-                {{/if}}
-            </ul>
-
-            <ul class="languages__list">
-                {{#if isNl}}
-                <li><a href="http://en.wikipedia.org">English</a></li>
-                <li><a href="https://pap.wikipedia.org">Papiamentu</a></li>
-                <li><a href="https://zea.wikipedia.org/">Zeêuws</a></li>
-                {{/if}}
-
-                {{#if isBe}}
-                <li><a href="http://de.wikipedia.org">Deutsch</a></li>
-                <li><a href="http://li.wikipedia.org">Limburgs</a></li>
-                <li><a href="http://en.wikipedia.org">English</a></li>
-                {{/if}}
-            </ul>
-
-            {{#if isBe}}
-            <ul class="languages__list">
-                <li><a href="https://pcd.wikipedia.org">Picard</a></li>
-            </ul>
-            {{/if}}
         </div>
 
         <div class="button__wrapper">
@@ -134,7 +97,7 @@
         <ul id="all-languages"
             class="all-languages"
             data-toggle-state="hidden">
-            {{#each languages}}
+            {{#each allLanguages}}
                 <li><a href="https://{{@key}}.wikipedia.org">{{this}}</a></li>
             {{/each}}
         </ul>

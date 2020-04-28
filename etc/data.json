@@ -1,11 +1,13 @@
 {
-    "languagesBe" : [
-        "nl", "fr", "de", "lb", "wa", "li", "vls", "ksh", "en", "pc"
-    ],
+    "languages" : {
+        "be" : [
+            "nl", "fr", "de", "lb", "wa", "li", "vls", "ksh", "en", "pc"
+        ],
 
-    "languagesNl" : [
-        "nl", "fy", "en", "nds-nl", "li", "pap", "yi", "ksh", "zea"
-    ],
+        "nl" : [
+            "nl", "fy", "en", "nds-nl", "li", "pap", "yi", "ksh", "zea"
+        ]
+    },
 
     "allLanguages" : {
         "ar": "العربية",
@@ -23,6 +25,7 @@
         "fa": "فارسی",
         "fi": "Suomi",
         "fr": "Français",
+        "fy" : "Frysk",
         "gl": "Galego",
         "he": "עברית",
         "hi": "हिन्दी",

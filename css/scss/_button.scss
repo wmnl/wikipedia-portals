@@ -31,6 +31,13 @@
     &--action {
         background: $c-4;
         color: white;
+
+        // On small screens the text might be too big
+        @include respond-until($screen-sm) {
+            span {
+                display: none;
+            }
+        }
     }
 
     html.has-mouse &--action:hover {

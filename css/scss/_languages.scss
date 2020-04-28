@@ -1,21 +1,22 @@
 .languages {
-    display: flex;
-    flex-wrap: wrap;
     margin-top: 4rem;
 
     &__list {
-        padding: 0 1rem;
-        width: calc(100% / 3);
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
         list-style: none;
     }
 
-    &__list:nth-child(4) {
-        width: 100%;
-    }
-
     &__list li {
+        width: calc(100% / 3);
         margin-bottom: 1rem;
         text-align: center;
+        padding: 0 .5rem;
+
+        @include respond-until(400px) {
+            width: 50%;
+        }
     }
 
     a {
