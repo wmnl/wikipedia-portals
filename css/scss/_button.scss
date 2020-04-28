@@ -6,20 +6,34 @@
     line-height: 1;
     padding: 1rem 2rem;
     text-align: center;
+    @include flex-center(row);
+
+    &__icon {
+        width: 2rem;
+        margin-right: .5rem;
+    }
 
     &__wrapper {
         @include flex-center;
     }
 
     &--toggle {
-        display: inline-block;
         margin: 2rem auto 0 auto;
         font-size: 1.6rem;
+        background: $c-6;
         color: $c-4;
+    }
+
+    html.has-mouse &--toggle:hover {
+        background: white;
     }
 
     &--action {
         background: $c-4;
         color: white;
+    }
+
+    html.has-mouse &--action:hover {
+        background: $c-5;
     }
 }

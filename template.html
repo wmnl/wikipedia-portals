@@ -18,7 +18,8 @@
     <div class="page">
         <div class="logo">
             <a href="http://www.wikipedia.org">
-                <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/180px-Wikipedia-logo-v2-wordmark.svg.png"
+                <img class="logo__image"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/500px-Wikipedia-logo-v2-wordmark.svg.png"
                      alt="Wikipedia logo" />
             </a>
         </div>
@@ -70,7 +71,8 @@
             <ul class="languages__list">
                 {{#if isNl}}
                 <li><a href="http://nl.wikipedia.org">Nederlands</a></li>
-                <li><a href="http://fy.wikipedia.org">Frysk</a></li>
+                <li><a href="http://nds-nl.wikipedia.org">Nedersaksisch</a></li>
+                <li><a href="https://yi.wikipedia.org">Yiddish</a></li>
                 {{/if}}
 
                 {{#if isBe}}
@@ -82,14 +84,15 @@
 
             <ul class="languages__list">
                 {{#if isNl}}
-                <li><a href="http://nds-nl.wikipedia.org">Nedersaksisch</a></li>
+                <li><a href="http://fy.wikipedia.org">Frysk</a></li>
                 <li><a href="http://li.wikipedia.org">Limburgs</a></li>
+                <li><a href="http://ksh.wikipedia.org">Ripuarisch</a></li>
                 {{/if}}
 
                 {{#if isBe}}
                 <li><a href="http://fr.wikipedia.org">Français</a></li>
                 <li><a href="http://wa.wikipedia.org">Walon</a></li>
-                <li><a href="http://ksh.wikipedia.org">Ripoarėsch Sprooche</a></li>
+                <li><a href="http://ksh.wikipedia.org">Ripuarisch</a></li>
                 {{/if}}
             </ul>
 
@@ -97,6 +100,7 @@
                 {{#if isNl}}
                 <li><a href="http://en.wikipedia.org">English</a></li>
                 <li><a href="https://pap.wikipedia.org">Papiamentu</a></li>
+                <li><a href="https://zea.wikipedia.org/">Zeêuws</a></li>
                 {{/if}}
 
                 {{#if isBe}}
@@ -105,19 +109,25 @@
                 <li><a href="http://en.wikipedia.org">English</a></li>
                 {{/if}}
             </ul>
+
+            {{#if isBe}}
+            <ul class="languages__list">
+                <li><a href="https://pcd.wikipedia.org">Picard</a></li>
+            </ul>
+            {{/if}}
         </div>
 
         <div class="button__wrapper">
             <a href="#all-languages"
                data-toggle
                class="button button--toggle">
-                {{#if isNl}}
-                meer talen
-                {{/if}}
-
-                {{#if isBe}}
-                meer talen / d'autres langues
-                {{/if}}
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/OOjs_UI_icon_language-ltr-progressive.svg/60px-OOjs_UI_icon_language-ltr-progressive.svg.png"
+                     class="button__icon"
+                     alt="Translation icon" />
+                <span>
+                    {{#if isNl}}meer talen{{/if}}
+                    {{#if isBe}}meer talen / d'autres langues{{/if}}
+                </span>
             </a>
         </div>
 
@@ -132,7 +142,8 @@
         <footer class="footer">
             <a class="footer__logo"
                href="http://www.wikimedia.org">
-                <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/50px-Wikimedia-logo.svg.png" alt="Wikimedia logo" class="image-right" width="50" />
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/200px-Wikimedia-logo.svg.png"
+                      alt="Wikimedia logo" />
             </a>
 
             {{#if isNl}}

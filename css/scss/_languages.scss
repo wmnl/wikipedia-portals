@@ -1,11 +1,16 @@
 .languages {
     display: flex;
-    margin-top: 3rem;
+    flex-wrap: wrap;
+    margin-top: 4rem;
 
     &__list {
-        margin: 0 1rem;
+        padding: 0 1rem;
         width: calc(100% / 3);
         list-style: none;
+    }
+
+    &__list:nth-child(4) {
+        width: 100%;
     }
 
     &__list li {

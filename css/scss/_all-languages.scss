@@ -1,8 +1,11 @@
 .all-languages {
     text-align: center;
     margin-top: 1rem;
-    transition: 1s;
-    overflow: hidden;
+
+    html.has-js & {
+        transition: 1s;
+        overflow: hidden;
+    }
 
     li {
         display: inline-block;
@@ -11,11 +14,13 @@
         line-height: 1.5;
     }
 
-    &[data-toggle-state="hidden"] {
-        max-height: 0;
-    }
+    html.has-js & {
+        &[data-toggle-state="hidden"] {
+            max-height: 0;
+        }
 
-    &[data-toggle-state="show"] {
-        max-height: 1000px;
+        &[data-toggle-state="show"] {
+            max-height: 1000px;
+        }
     }
 }

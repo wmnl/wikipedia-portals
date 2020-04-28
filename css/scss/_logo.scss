@@ -1,3 +1,7 @@
 .logo {
     @include flex-center;
+
+    &__image {
+        width: 25rem;
+    }
 }
