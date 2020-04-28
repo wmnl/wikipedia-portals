@@ -7,7 +7,7 @@
     }
 
     &__input {
-        font-size: 1.6rem;
+        font-size: 16px; // If this is less than 16px, iOS will zoom in on the element
         padding: 1rem;
         border: 1px solid $c-2;
     }
@@ -18,9 +18,9 @@
 
     &__language,
     &__button {
-        font-size: 1.6rem;
+        font-size: 16px; // If this is less than 16px, iOS will zoom in on the element
         padding: 1rem 2rem;
-        height: 4rem;
+        height: 4.5rem;
         margin: 0 1rem;
     }
 }

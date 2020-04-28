@@ -34,6 +34,13 @@
 
         // On small screens the text might be too big
         @include respond-until($screen-sm) {
+            padding: 0 2rem !important;
+
+            .button__icon {
+                margin-right: 0;
+                width: 2.5rem;
+            }
+
             span {
                 display: none;
             }
