@@ -8,7 +8,11 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php if (IS_NL): ?>
     <title>Wikipedia.nl</title>
+<?php else: ?>
+    <title>Wikipedia.be</title>
+<?php endif; ?>
     <!-- Voor kennis en zo. Je weet! -->
     <style>
         <?php echo file_get_contents("css/style.css"); ?>
@@ -19,7 +23,7 @@
         <div class="row">
             <div id="logo" class="center col-full">
                 <a href="http://www.wikipedia.org">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/180px-Wikipedia-logo-v2-wordmark.svg.png" alt="Wikipedia logo" />
+                    <img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/180px-Wikipedia-logo-v2-wordmark.svg.png" alt="Wikipedia logo" />
                 </a>
             </div>
         </div>
@@ -143,7 +147,7 @@
 
         <div class="row">
             <a href="http://www.wikimedia.org">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/50px-Wikimedia-logo.svg.png" alt="Wikimedia logo" class="image-right" width="50" />
+                <img src="//upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/50px-Wikimedia-logo.svg.png" alt="Wikimedia logo" class="image-right" width="50" />
             </a>
 
             <div style="margin-top:8px;"></div>
@@ -168,7 +172,7 @@
         </div>
     </div>
 
-    <!-- Only include for IE8 and later -->
+    <!-- Only include for IE9 and later -->
     <!--[if (gte IE 9)|!(IE)]><!-->
     <script>
         <?php
