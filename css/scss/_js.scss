@@ -1,7 +1,5 @@
-@import "compass/css3";
-
 .toggle {
-    @include transition(2s);
+    transition: 2s;
     overflow: hidden;
 }
 

@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "chokidar-cli": "^2.1.0",
+    "handlebars": "^4.7.6",
+    "node-sass": "^4.14.0"
+  },
+  "scripts": {
+    "build": "npm run build:html && build:css",
+    "build:css": "node-sass --output-style compressed css/scss/style.scss css/style.css",
+    "build:html": "node etc/build.js",
+    "watch:css": "chokidar 'css/scss/*.scss' -c 'npm run build:css'",
+    "watch:html": "chokidar 'template.html' -c npm run build:html"
+  }
+}
