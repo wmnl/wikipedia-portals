@@ -10,8 +10,7 @@ html {
 
 body {
     font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-    color: #333;
-    // background: #f6f6f6;
+    color: $c-1;
     font-size: 14px;
     line-height: 1.428571429;
 }
@@ -33,7 +32,7 @@ li {
 }
 
 hr {
-    border: 1px solid #ddd;
+    border: 1px solid $c-2;
 }
 
 .image-right {
@@ -70,7 +69,6 @@ hr {
 .inline-list {
     li {
         display: inline-block;
-
         padding: 0 $bg / 2;
     }
 }
@@ -101,7 +99,7 @@ hr {
 
     select {
         height: $bg * 2;
-        border: 1px solid #ccc;
+        border: 1px solid $c-3;
     }
 
     select, button {

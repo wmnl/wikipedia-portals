@@ -10,7 +10,7 @@
     <title>Wikipedia.be</title>
 {{/if}}
     <style>
-        {{css}}
+        {{{css}}}
     </style>
     <!-- version: {{version}} -->
 </head>
@@ -97,7 +97,7 @@
             <ul class="col-third">
                 {{#if isNl}}
                 <li><a href="http://en.wikipedia.org">Wikipedia in English &raquo;</a></li>
-                <li><a href="http://de.wikipedia.org">Wikipedia in Deutsch &raquo;</a></li>
+                <li><a href="https://pap.wikipedia.org">Wikipedia na Papiamentu &raquo;</a></li>
                 {{/if}}
 
                 {{#if isBe}}
@@ -123,7 +123,7 @@
 
         <div class="row">
             <div class="center col-full">
-                <ul id="morelanguages" class="inline-list toggle toggle-hidden">
+                <ul id="morelanguages" class="inline-list toggle" data-toggle-state="hidden">
                     {{#each languages}}
                         <li><a href="https://{{@key}}.wikipedia.org">{{this}}</a></li>
                     {{/each}}
@@ -140,24 +140,24 @@
                 <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/50px-Wikimedia-logo.svg.png" alt="Wikimedia logo" class="image-right" width="50" />
             </a>
 
-            <div style="margin-top:8px;"></div>
-
             {{#if isNl}}
-            <p>Wikipedia is een project van de <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a>.</p>
+            <p>
+                <a href="http://www.wikimedia.nl">Wikimedia Nederland</a> ondersteunt Wikipedia in Nederland.
+            </p>
 
-            <p>Steun vrije kennis: <a href="http://www.wikimedia.nl">word lid van de Vereniging Wikimedia Nederland</a>.</p>
+            <p>
+                Wikipedia is een project van de <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a>.
+            </p>
             {{/if}}
 
             {{#if isBe}}
-            <p>Wikipedia is een project van de <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a> / Wikipedia est un projet de la <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a></p>
+            <p>
+                <a href="http://wikimedia.be/">Wikimedia Belgium</a> ondersteunt Wikipedia in België / <a href="http://wikimedia.be/">Wikimedia Belgium</a> soutient Wikipedia en Belgique.</p>
+            </p>
 
-            <br />
-
-            <p>Steun vrije kennis: <a href="http://www.wikimedia.nl">word lid van de Vereniging Wikimedia Nederland</a> / Soutenir le savoir libre: devenir membre de <a href="http://www.wikimedia.nl">l'Association Wikimedia Pays-Bas</a>.</p>
-
-            <br />
-
-            <p>Help mee met het oprichten van <a href="http://www.wikimedia.be">Wikimedia België</a> / Aider à fonder <a href="http://www.wikimedia.be">Wikimedia Belgique</a>.</p>
+            <p>
+                Wikipedia est un projet de la <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a> / Wikipedia is een project van de <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a>.
+            </p>
             {{/if}}
         </div>
     </div>
@@ -165,7 +165,7 @@
     <!-- Only include for IE9 and later -->
     <!--[if (gte IE 9)|!(IE)]><!-->
     <script>
-        {{js}}
+        {{{js}}}
     </script>
     <!--<![endif]-->
 </body>

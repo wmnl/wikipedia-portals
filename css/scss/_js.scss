@@ -1,12 +1,12 @@
 .toggle {
-    transition: 2s;
+    transition: 1s;
     overflow: hidden;
 }
 
-.toggle-hidden {
+[data-toggle-state="hidden"] {
     max-height: 0;
 }
 
-.toggle-show {
+[data-toggle-state="show"] {
     max-height: 1000px;
 }

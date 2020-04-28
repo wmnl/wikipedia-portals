@@ -2,13 +2,17 @@
   "dependencies": {
     "chokidar-cli": "^2.1.0",
     "handlebars": "^4.7.6",
+    "http-server": "^0.12.3",
     "node-sass": "^4.14.0"
   },
   "scripts": {
-    "build": "npm run build:html && build:css",
+    "build": "npm run build:html && npm run build:css",
     "build:css": "node-sass --output-style compressed css/scss/style.scss css/style.css",
     "build:html": "node etc/build.js",
-    "watch:css": "chokidar 'css/scss/*.scss' -c 'npm run build:css'",
-    "watch:html": "chokidar 'template.html' -c npm run build:html"
+    "dev" : "npm run serve & npm run watch",
+    "serve" : "http-server build/",
+    "watch" : "npm run watch:css & npm run watch:html",
+    "watch:css": "chokidar 'css/scss/*.scss' -c 'npm run build'",
+    "watch:html": "chokidar 'template.html' 'js/app.js' -c 'npm run build:html'"
   }
 }
