@@ -70,55 +70,61 @@
         <div class="languages">
             <ul class="languages__list">
                 {{#if isNl}}
-                <li><a href="http://nl.wikipedia.org">Wikipedia in het Nederlands &raquo;</a></li>
-                <li><a href="http://fy.wikipedia.org">Wikipedy yn it Frysk &raquo;</a></li>
+                <li><a href="http://nl.wikipedia.org">Nederlands</a></li>
+                <li><a href="http://fy.wikipedia.org">Frysk</a></li>
                 {{/if}}
 
                 {{#if isBe}}
-                <li><a href="http://nl.wikipedia.org">Wikipedia in het Nederlands &raquo;</a></li>
-                <li><a href="http://lb.wikipedia.org">Wikipedia op Lëtzebuergesch &raquo;</a></li>
-                <li><a href="http://vls.wikipedia.org">Wikipedia in 't West-Vlams &raquo;</a></li>
+                <li><a href="http://nl.wikipedia.org">Nederlands</a></li>
+                <li><a href="http://lb.wikipedia.org">Lëtzebuergesch</a></li>
+                <li><a href="http://vls.wikipedia.org">West-Vlams</a></li>
                 {{/if}}
             </ul>
 
             <ul class="languages__list">
                 {{#if isNl}}
-                <li><a href="http://nds-nl.wikipedia.org">Wikipedie in 't Nedersaksisch &raquo;</a></li>
-                <li><a href="http://li.wikipedia.org">Wikipedia op 't Limburgs &raquo;</a></li>
+                <li><a href="http://nds-nl.wikipedia.org">Nedersaksisch</a></li>
+                <li><a href="http://li.wikipedia.org">Limburgs</a></li>
                 {{/if}}
 
                 {{#if isBe}}
-                <li><a href="http://fr.wikipedia.org">Wikipédia en Français &raquo;</a></li>
-                <li><a href="http://wa.wikipedia.org">Wikipedia e Walon &raquo;</a></li>
-                <li><a href="http://ksh.wikipedia.org">Wikkipedija för de Ripoareshe Shproache &raquo;</a></li>
+                <li><a href="http://fr.wikipedia.org">Français</a></li>
+                <li><a href="http://wa.wikipedia.org">Walon</a></li>
+                <li><a href="http://ksh.wikipedia.org">Ripoarėsch Sprooche</a></li>
                 {{/if}}
             </ul>
 
             <ul class="languages__list">
                 {{#if isNl}}
-                <li><a href="http://en.wikipedia.org">Wikipedia in English &raquo;</a></li>
-                <li><a href="https://pap.wikipedia.org">Wikipedia na Papiamentu &raquo;</a></li>
+                <li><a href="http://en.wikipedia.org">English</a></li>
+                <li><a href="https://pap.wikipedia.org">Papiamentu</a></li>
                 {{/if}}
 
                 {{#if isBe}}
-                <li><a href="http://de.wikipedia.org">Wikipedia in Deutsch &raquo;</a></li>
-                <li><a href="http://li.wikipedia.org">Wikipedia op 't Limburgs &raquo;</a></li>
-                <li><a href="http://en.wikipedia.org">Wikipedia in English &raquo;</a></li>
+                <li><a href="http://de.wikipedia.org">Deutsch</a></li>
+                <li><a href="http://li.wikipedia.org">Limburgs</a></li>
+                <li><a href="http://en.wikipedia.org">English</a></li>
                 {{/if}}
             </ul>
         </div>
 
-        <button class="button button--toggle" data-toggle="all-languages">
-            {{#if isNl}}
-            meer talen
-            {{/if}}
+        <div class="button__wrapper">
+            <a href="#all-languages"
+               data-toggle
+               class="button button--toggle">
+                {{#if isNl}}
+                meer talen
+                {{/if}}
 
-            {{#if isBe}}
-            meer talen / d'autres langues
-            {{/if}}
-        </button>
+                {{#if isBe}}
+                meer talen / d'autres langues
+                {{/if}}
+            </a>
+        </div>
 
-        <ul id="all-languages" class="all-languages" data-toggle-state="hidden">
+        <ul id="all-languages"
+            class="all-languages"
+            data-toggle-state="hidden">
             {{#each languages}}
                 <li><a href="https://{{@key}}.wikipedia.org">{{this}}</a></li>
             {{/each}}

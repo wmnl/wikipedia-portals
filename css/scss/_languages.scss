@@ -5,14 +5,16 @@
     &__list {
         margin: 0 1rem;
         width: calc(100% / 3);
-        list-style-type: circle;
+        list-style: none;
     }
 
     &__list li {
-        padding-bottom: .5rem;
+        margin-bottom: 1rem;
+        text-align: center;
     }
 
     a {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        font-weight: 500;
     }
 }

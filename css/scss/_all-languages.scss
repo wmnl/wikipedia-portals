@@ -1,11 +1,21 @@
 .all-languages {
     text-align: center;
     margin-top: 1rem;
+    transition: 1s;
+    overflow: hidden;
 
     li {
         display: inline-block;
         padding: 0 1rem;
         font-size: 1.4rem;
         line-height: 1.5;
+    }
+
+    &[data-toggle-state="hidden"] {
+        max-height: 0;
+    }
+
+    &[data-toggle-state="show"] {
+        max-height: 1000px;
     }
 }
