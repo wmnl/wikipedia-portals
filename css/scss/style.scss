@@ -1,7 +1,12 @@
+@import "../../node_modules/valenski/values.scss";
+@import "../../node_modules/valenski/mixins.scss";
+@import "../../node_modules/valenski/valenski-reset.scss";
 @import "values";
-@import "mixins";
 @import "base";
-
-html.js-enabled {
-    @import "js";
-}
+@import "page";
+@import "footer";
+@import "button";
+@import "all-languages";
+@import "logo";
+@import "search";
+@import "languages";

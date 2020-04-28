@@ -1,0 +1,9 @@
+.footer {
+    margin-top: 3rem;
+    border-top: 2px solid $c-2;
+    padding: 1rem 0;
+    @include flex-center;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: 1.5;
+}

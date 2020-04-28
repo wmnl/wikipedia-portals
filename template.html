@@ -15,60 +15,60 @@
     <!-- version: {{version}} -->
 </head>
 <body>
-    <div class="container">
-        <div class="row">
-            <div id="logo" class="center col-full">
-                <a href="http://www.wikipedia.org">
-                    <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/180px-Wikipedia-logo-v2-wordmark.svg.png" alt="Wikipedia logo" />
-                </a>
-            </div>
+    <div class="page">
+        <div class="logo">
+            <a href="http://www.wikipedia.org">
+                <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/180px-Wikipedia-logo-v2-wordmark.svg.png"
+                     alt="Wikipedia logo" />
+            </a>
         </div>
 
-        <div id="searchform" class="row col-full">
-            <form method="get" role="form" action="http://www.wikipedia.org/search-redirect.php">
-                <div class="row">
-                    <input type="text" id="search" name="search" class="col-full" />
-                </div>
+        <form method="get"
+              class="search"
+              role="form"
+              action="http://www.wikipedia.org/search-redirect.php">
 
-                <div class="row">
-                    <div class="col-half">
-                        <select name="language" id="language">
-                            <option value="nl">Nederlands</option>
-                            {{#if isBe}}
-                            <option value="fr">Français</option>
-                            {{/if}}
-                            {{#if isNl}}
-                            <option value="fy">Frysk</option>
-                            <option value="nds-nl">Nedersaksisch</option>
-                            {{/if}}
-                            <option value="li">Limburgs</option>
-                            {{#if isBe}}
-                            <option value="lb">Lëtzebuergesch</option>
-                            <option value="wa">Walon</option>
-                            <option value="vls">West-Vlams</option>
-                            <option value="ksh">Ripoarisch</option>
-                            {{/if}}
-                            <option value="en">English</option>
-                            <option value="de">Deutsch</option>
-                            <option value="es">Español</option>
-                            {{#if isNl}}
-                            <option value="fr">Français</option>
-                            {{/if}}
-                        </select>
-                    </div>
+            <input type="text"
+                   id="search"
+                   name="search"
+                   class="search__input" />
 
-                    <div class="col-half">
-                        <button type="submit">
-                            {{#if isBe}}Zoeken / Rechercher{{/if}}
-                            {{#if isNl}}Zoeken in Wikipedia{{/if}}
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div> <!-- #searchform -->
+            <menu class="search__options">
+                <select class="search__language"
+                        name="language"
+                        id="language">
+                    <option value="nl">Nederlands</option>
+                    {{#if isBe}}
+                    <option value="fr">Français</option>
+                    {{/if}}
+                    {{#if isNl}}
+                    <option value="fy">Frysk</option>
+                    <option value="nds-nl">Nedersaksisch</option>
+                    {{/if}}
+                    <option value="li">Limburgs</option>
+                    {{#if isBe}}
+                    <option value="lb">Lëtzebuergesch</option>
+                    <option value="wa">Walon</option>
+                    <option value="vls">West-Vlams</option>
+                    <option value="ksh">Ripoarisch</option>
+                    {{/if}}
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                    <option value="es">Español</option>
+                    {{#if isNl}}
+                    <option value="fr">Français</option>
+                    {{/if}}
+                </select>
 
-        <div class="row">
-            <ul class="col-third">
+                <button class="search__button button button--action" type="submit">
+                    {{#if isBe}}Zoeken / Rechercher{{/if}}
+                    {{#if isNl}}Zoeken in Wikipedia{{/if}}
+                </button>
+            </menu>
+        </form>
+
+        <div class="languages">
+            <ul class="languages__list">
                 {{#if isNl}}
                 <li><a href="http://nl.wikipedia.org">Wikipedia in het Nederlands &raquo;</a></li>
                 <li><a href="http://fy.wikipedia.org">Wikipedy yn it Frysk &raquo;</a></li>
@@ -81,7 +81,7 @@
                 {{/if}}
             </ul>
 
-            <ul class="col-third">
+            <ul class="languages__list">
                 {{#if isNl}}
                 <li><a href="http://nds-nl.wikipedia.org">Wikipedie in 't Nedersaksisch &raquo;</a></li>
                 <li><a href="http://li.wikipedia.org">Wikipedia op 't Limburgs &raquo;</a></li>
@@ -94,7 +94,7 @@
                 {{/if}}
             </ul>
 
-            <ul class="col-third">
+            <ul class="languages__list">
                 {{#if isNl}}
                 <li><a href="http://en.wikipedia.org">Wikipedia in English &raquo;</a></li>
                 <li><a href="https://pap.wikipedia.org">Wikipedia na Papiamentu &raquo;</a></li>
@@ -108,35 +108,25 @@
             </ul>
         </div>
 
-        <div class="row">
-            <div class="center col-full">
-                &laquo;
-                <a href="#morelanguages" data-toggle="toggle">
-                    meer talen -
-                    d'autres langues -
-                    more languages -
-                    mehr Sprachen
-                </a>
-                &raquo;
-            </div>
-        </div>
+        <button class="button button--toggle" data-toggle="all-languages">
+            {{#if isNl}}
+            meer talen
+            {{/if}}
 
-        <div class="row">
-            <div class="center col-full">
-                <ul id="morelanguages" class="inline-list toggle" data-toggle-state="hidden">
-                    {{#each languages}}
-                        <li><a href="https://{{@key}}.wikipedia.org">{{this}}</a></li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
+            {{#if isBe}}
+            meer talen / d'autres langues
+            {{/if}}
+        </button>
 
-        <div class="row">
-            <hr />
-        </div>
+        <ul id="all-languages" class="all-languages" data-toggle-state="hidden">
+            {{#each languages}}
+                <li><a href="https://{{@key}}.wikipedia.org">{{this}}</a></li>
+            {{/each}}
+        </ul>
 
-        <div class="row">
-            <a href="http://www.wikimedia.org">
+        <footer class="footer">
+            <a class="footer__logo"
+               href="http://www.wikimedia.org">
                 <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/50px-Wikimedia-logo.svg.png" alt="Wikimedia logo" class="image-right" width="50" />
             </a>
 

@@ -1,0 +1,20 @@
+.button {
+    border: 1px solid $c-4;
+    border-radius: 2px;
+    font-weight: bold;
+    font-weight: 500;
+    line-height: 1;
+    padding: 1rem 2rem;
+
+    &--toggle {
+        display: block;
+        margin: 2rem auto 0 auto;
+        font-size: 1.6rem;
+        color: $c-4;
+    }
+
+    &--action {
+        background: $c-4;
+        color: white;
+    }
+}

@@ -1,0 +1,5 @@
+.page {
+    @include margin-center;
+    max-width: $max-width;
+    padding: 2rem;
+}

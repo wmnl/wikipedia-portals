@@ -1,0 +1,25 @@
+.search {
+    @include flex-center;
+
+    &, > * {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+    &__input {
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+
+    &__options {
+        @include flex-center(row);
+    }
+
+    &__language,
+    &__button {
+        font-size: 1.6rem;
+        padding: 1rem 2rem;
+        height: 4rem;
+        margin: 0 1rem;
+    }
+}
