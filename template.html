@@ -1,29 +1,25 @@
-<?php
-    $lang = $_GET['lang'];
-    define('IS_NL', $lang == "nl");
-    define('IS_BE', $lang == "be");
-?>
 <!doctype html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php if (IS_NL): ?>
+{{#if isNl}}
     <title>Wikipedia.nl</title>
-<?php else: ?>
+{{/if}}
+{{#if isBe}}
     <title>Wikipedia.be</title>
-<?php endif; ?>
-    <!-- Voor kennis en zo. Je weet! -->
+{{/if}}
     <style>
-        <?php echo file_get_contents("css/style.css"); ?>
+        {{css}}
     </style>
+    <!-- version: {{version}} -->
 </head>
 <body>
     <div class="container">
         <div class="row">
             <div id="logo" class="center col-full">
                 <a href="http://www.wikipedia.org">
-                    <img src="//upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/180px-Wikipedia-logo-v2-wordmark.svg.png" alt="Wikipedia logo" />
+                    <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Wikipedia-logo-v2-wordmark.svg/180px-Wikipedia-logo-v2-wordmark.svg.png" alt="Wikipedia logo" />
                 </a>
             </div>
         </div>
@@ -38,33 +34,33 @@
                     <div class="col-half">
                         <select name="language" id="language">
                             <option value="nl">Nederlands</option>
-                            <?php if (IS_BE): ?>
+                            {{#if isBe}}
                             <option value="fr">Français</option>
-                            <?php endif; ?>
-                            <?php if (IS_NL): ?>
+                            {{/if}}
+                            {{#if isNl}}
                             <option value="fy">Frysk</option>
                             <option value="nds-nl">Nedersaksisch</option>
-                            <?php endif; ?>
+                            {{/if}}
                             <option value="li">Limburgs</option>
-                            <?php if (IS_BE): ?>
+                            {{#if isBe}}
                             <option value="lb">Lëtzebuergesch</option>
                             <option value="wa">Walon</option>
                             <option value="vls">West-Vlams</option>
                             <option value="ksh">Ripoarisch</option>
-                            <?php endif; ?>
+                            {{/if}}
                             <option value="en">English</option>
                             <option value="de">Deutsch</option>
                             <option value="es">Español</option>
-                            <?php if (IS_NL): ?>
+                            {{#if isNl}}
                             <option value="fr">Français</option>
-                            <?php endif; ?>
+                            {{/if}}
                         </select>
                     </div>
 
                     <div class="col-half">
                         <button type="submit">
-                            <?php if (IS_BE): ?>Zoeken / Rechercher<?php endif; ?>
-                            <?php if (IS_NL): ?>Zoeken in Wikipedia<?php endif; ?>
+                            {{#if isBe}}Zoeken / Rechercher{{/if}}
+                            {{#if isNl}}Zoeken in Wikipedia{{/if}}
                         </button>
                     </div>
                 </div>
@@ -73,42 +69,42 @@
 
         <div class="row">
             <ul class="col-third">
-                <?php if (IS_NL): ?>
+                {{#if isNl}}
                 <li><a href="http://nl.wikipedia.org">Wikipedia in het Nederlands &raquo;</a></li>
                 <li><a href="http://fy.wikipedia.org">Wikipedy yn it Frysk &raquo;</a></li>
-                <?php endif; ?>
+                {{/if}}
 
-                <?php if (IS_BE): ?>
+                {{#if isBe}}
                 <li><a href="http://nl.wikipedia.org">Wikipedia in het Nederlands &raquo;</a></li>
                 <li><a href="http://lb.wikipedia.org">Wikipedia op Lëtzebuergesch &raquo;</a></li>
                 <li><a href="http://vls.wikipedia.org">Wikipedia in 't West-Vlams &raquo;</a></li>
-                <?php endif; ?>
+                {{/if}}
             </ul>
 
             <ul class="col-third">
-                <?php if (IS_NL): ?>
+                {{#if isNl}}
                 <li><a href="http://nds-nl.wikipedia.org">Wikipedie in 't Nedersaksisch &raquo;</a></li>
                 <li><a href="http://li.wikipedia.org">Wikipedia op 't Limburgs &raquo;</a></li>
-                <?php endif; ?>
+                {{/if}}
 
-                <?php if (IS_BE): ?>
+                {{#if isBe}}
                 <li><a href="http://fr.wikipedia.org">Wikipédia en Français &raquo;</a></li>
                 <li><a href="http://wa.wikipedia.org">Wikipedia e Walon &raquo;</a></li>
                 <li><a href="http://ksh.wikipedia.org">Wikkipedija för de Ripoareshe Shproache &raquo;</a></li>
-                <?php endif; ?>
+                {{/if}}
             </ul>
 
             <ul class="col-third">
-                <?php if (IS_NL): ?>
+                {{#if isNl}}
                 <li><a href="http://en.wikipedia.org">Wikipedia in English &raquo;</a></li>
                 <li><a href="http://de.wikipedia.org">Wikipedia in Deutsch &raquo;</a></li>
-                <?php endif; ?>
+                {{/if}}
 
-                <?php if (IS_BE): ?>
+                {{#if isBe}}
                 <li><a href="http://de.wikipedia.org">Wikipedia in Deutsch &raquo;</a></li>
                 <li><a href="http://li.wikipedia.org">Wikipedia op 't Limburgs &raquo;</a></li>
                 <li><a href="http://en.wikipedia.org">Wikipedia in English &raquo;</a></li>
-                <?php endif; ?>
+                {{/if}}
             </ul>
         </div>
 
@@ -128,15 +124,9 @@
         <div class="row">
             <div class="center col-full">
                 <ul id="morelanguages" class="inline-list toggle toggle-hidden">
-                    <?php
-                        $lang = json_decode(file_get_contents("languages.json"));
-                        foreach($lang as $code => $lang) {
-                            printf(
-                                '<li><a href="http://%s.wikipedia.org">%s</a></li>',
-                                $code, $lang
-                            );
-                        }
-                    ?>
+                    {{#each languages}}
+                        <li><a href="https://{{@key}}.wikipedia.org">{{this}}</a></li>
+                    {{/each}}
                 </ul>
             </div>
         </div>
@@ -147,18 +137,18 @@
 
         <div class="row">
             <a href="http://www.wikimedia.org">
-                <img src="//upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/50px-Wikimedia-logo.svg.png" alt="Wikimedia logo" class="image-right" width="50" />
+                <img src="https:upload.wikimedia.org/wikipedia/commons/thumb/8/81/Wikimedia-logo.svg/50px-Wikimedia-logo.svg.png" alt="Wikimedia logo" class="image-right" width="50" />
             </a>
 
             <div style="margin-top:8px;"></div>
 
-            <?php if (IS_NL): ?>
+            {{#if isNl}}
             <p>Wikipedia is een project van de <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a>.</p>
 
             <p>Steun vrije kennis: <a href="http://www.wikimedia.nl">word lid van de Vereniging Wikimedia Nederland</a>.</p>
-            <?php endif; ?>
+            {{/if}}
 
-            <?php if (IS_BE): ?>
+            {{#if isBe}}
             <p>Wikipedia is een project van de <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a> / Wikipedia est un projet de la <a href="http://www.wikimediafoundation.org">Wikimedia Foundation</a></p>
 
             <br />
@@ -168,18 +158,14 @@
             <br />
 
             <p>Help mee met het oprichten van <a href="http://www.wikimedia.be">Wikimedia België</a> / Aider à fonder <a href="http://www.wikimedia.be">Wikimedia Belgique</a>.</p>
-            <?php endif; ?>
+            {{/if}}
         </div>
     </div>
 
     <!-- Only include for IE9 and later -->
     <!--[if (gte IE 9)|!(IE)]><!-->
     <script>
-        <?php
-            echo file_get_contents("js/minidom.js");
-            echo file_get_contents("js/app.js");
-        ?>
-        window.app = new App();
+        {{js}}
     </script>
     <!--<![endif]-->
 </body>
