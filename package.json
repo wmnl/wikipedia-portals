@@ -15,6 +15,6 @@
     "serve": "http-server build/",
     "watch": "npm run watch:css & npm run watch:html",
     "watch:css": "chokidar 'css/scss/*.scss' -c 'npm run build'",
-    "watch:html": "chokidar 'template.html' 'js/app.js' -c 'npm run build:html'"
+    "watch:html": "chokidar 'template.html' 'js/app.js' 'etc/data.json' -c 'npm run build:html'"
   }
 }
