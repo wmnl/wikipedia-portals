@@ -2,6 +2,7 @@ const DATA = require('./data.json');
 const fs = require('fs').promises;
 const handlebars = require('handlebars');
 const pathlib = require('path');
+const uglify = require('uglify-js');
 
 function path(file) {
     const dirname = pathlib.dirname(__filename);
@@ -10,6 +11,11 @@ function path(file) {
 
 async function readFile(file) {
     return await fs.readFile(path(file), 'utf-8');
+}
+
+async function getJs() {
+    const js = await readFile('../js/app.js');
+    return uglify.minify(js).code;
 }
 
 function getLanguages(version) {
@@ -30,7 +36,7 @@ async function build(version) {
         css : await readFile('../css/style.css'),
         isBe : version === 'be',
         isNl : version === 'nl',
-        js : await readFile('../js/app.js'),
+        js : await getJs(),
         languages : getLanguages(version),
         version : version
     });
