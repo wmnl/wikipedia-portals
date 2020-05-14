@@ -5,7 +5,7 @@
         ],
 
         "nl" : [
-            "nl", "fy", "en", "nds-nl", "li", "pap", "ksh", "zea"
+            "nl", "fy", "en", "srn", "nds-nl", "li", "pap", "ksh", "zea"
         ]
     },
 
@@ -60,6 +60,7 @@
         "sk": "Slovenčina",
         "sl": "Slovenščina",
         "sr": "Српски / Srpski",
+        "srn" : "Sranantongo (Surinaams)",
         "sv": "Svenska",
         "tr": "Türkçe",
         "uk": "Українська",

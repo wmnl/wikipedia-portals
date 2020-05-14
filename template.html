@@ -38,26 +38,9 @@
                 <select class="search__language"
                         name="language"
                         id="language">
-                    <option value="nl">Nederlands</option>
-                    {{#if isBe}}
-                    <option value="fr">Français</option>
-                    <option value="de">Deutsch</option>
-                    {{/if}}
-                    {{#if isNl}}
-                    <option value="fy">Frysk</option>
-                    <option value="nds-nl">Nedersaksisch</option>
-                    {{/if}}
-                    <option value="li">Limburgs</option>
-                    {{#if isBe}}
-                    <option value="lb">Lëtzebuergesch</option>
-                    <option value="wa">Walon</option>
-                    <option value="vls">West-Vlams</option>
-                    <option value="ksh">Ripoarisch</option>
-                    {{/if}}
-                    <option value="en">English</option>
-                    {{#if isNl}}
-                    <option value="pap">Papiamentu</option>
-                    {{/if}}
+                    {{#each languages}}
+                    <option value="{{code}}">{{label}}</option>
+                    {{/each}}
                 </select>
 
                 <button class="search__button button button--action" type="submit">
