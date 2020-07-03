@@ -14,4 +14,14 @@
     &__logo img {
         width: 100%;
     }
+
+    &__small {
+        margin-top: 2rem;
+        display: flex;
+    }
+
+    &__small a {
+        color: $c-7;
+        margin: 0 1rem;
+    }
 }
