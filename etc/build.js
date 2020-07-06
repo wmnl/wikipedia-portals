@@ -41,7 +41,7 @@ async function build(version) {
         version : version
     });
 
-    const outpath = path(`../build/index-${version}.html`);
+    const outpath = path(`../build/${version}/index.html`);
     fs.writeFile(outpath, html);
     console.log(`Written ${outpath}`);
 }
