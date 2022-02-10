@@ -3,7 +3,7 @@
     "chokidar-cli": "^2.1.0",
     "handlebars": "^4.7.6",
     "http-server": "^0.12.3",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "uglify-js": "^3.9.1",
     "valenski": "^1.4.0"
   },
